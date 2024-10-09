@@ -29,16 +29,7 @@ steps:
     Write-Host "Listing all files in project directory:"
     Get-ChildItem -Recurse -Path $(System.DefaultWorkingDirectory)
   displayName: 'List Project Files'
-
-- powershell: |
-    Test-NetConnection -ComputerName 10.0.0.4 -Port 51026
-  displayName: 'Test SQL Server Connectivity'
   
-- powershell: |
-    $env:SQL_CONNECTION_STRING = 'jdbc:sqlserver://10.0.0.4\\MSSQLSERVER2022;databaseName=AHI_GHB_WHMIS;encrypt=false;trustServerCertificate=true;loginTimeout=300;socketTimeout=60000'
-    Write-Host "##vso[task.setvariable variable=SQL_CONNECTION_STRING]$env:SQL_CONNECTION_STRING"
-  displayName: 'Set SQL Server Connection String'
-
 - powershell: |
     mvn clean install
   displayName: 'Build with Maven'

@@ -35,7 +35,7 @@ import com.itextpdf.layout.element.Paragraph;
 public class Excel_Blockcurrentday_Manualcheckincheckout extends DB_utility {
 	
 	private WebDriver driver;
-	private String filepath="C:\\Users\\vpm85\\OneDrive\\Desktop\\Appmnt_admin.xlsx";
+	private String filepath = System.getProperty("user.dir") + "/src/test/resources/Appmnt_admin.xlsx";
 	private String scenario;
 	private String scenario1;
 	private String state;
