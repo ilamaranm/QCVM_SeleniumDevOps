@@ -1,0 +1,48 @@
+pool:
+  vmImage: 'windows-latest'
+
+steps:
+
+- checkout: self
+  displayName: 'Checkout Repository'
+
+- task: JavaToolInstaller@0
+  inputs:
+    versionSpec: '21'
+    jdkArchitectureOption: 'x64'
+    jdkSourceOption: 'PreInstalled'
+  displayName: 'Install JDK 21'
+
+- powershell: |
+   $chromedriverUrl = "https://storage.googleapis.com/chrome-for-testing-public/129.0.6668.71/win64/chromedriver-win64.zip"
+   Invoke-WebRequest -Uri $chromedriverUrl -OutFile chromedriver.zip
+   New-Item -ItemType Directory -Force -Path C:\webdriver
+   Expand-Archive -Path chromedriver.zip -DestinationPath C:\webdriver  
+  displayName: 'Download and Install Chromedriver'
+
+- powershell: |
+    [System.Environment]::SetEnvironmentVariable('PATH', $env:PATH + ";C:\webdriver", [System.EnvironmentVariableTarget]::Process)
+    Write-Host "##vso[task.setvariable variable=chromedriverPath]C:\webdriver"
+  displayName: 'Set Chromedriver Path'
+
+- powershell: |
+    Write-Host "Listing all files in project directory:"
+    Get-ChildItem -Recurse -Path $(System.DefaultWorkingDirectory)
+  displayName: 'List Project Files'
+
+- powershell: |
+    Test-NetConnection -ComputerName 10.0.0.4 -Port 51026
+  displayName: 'Test SQL Server Connectivity'
+  
+- powershell: |
+    $env:SQL_CONNECTION_STRING = 'jdbc:sqlserver://10.0.0.4\\MSSQLSERVER2022;databaseName=AHI_GHB_WHMIS;encrypt=false;trustServerCertificate=true;loginTimeout=300;socketTimeout=60000'
+    Write-Host "##vso[task.setvariable variable=SQL_CONNECTION_STRING]$env:SQL_CONNECTION_STRING"
+  displayName: 'Set SQL Server Connection String'
+
+- powershell: |
+    mvn clean install
+  displayName: 'Build with Maven'
+
+- powershell: |
+    mvn test -Dsql.connection.string=$(SQL_CONNECTION_STRING)
+  displayName: 'Run Maven Tests'
