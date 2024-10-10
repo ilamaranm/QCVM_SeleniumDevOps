@@ -2,20 +2,20 @@
 <testng-results ignored="0" total="2" passed="2" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2024-10-04T09:51:55 IST" name="Suite" finished-at="2024-10-04T09:53:03 IST" duration-ms="68591">
+  <suite started-at="2024-10-10T15:45:14 IST" name="Suite" finished-at="2024-10-10T15:46:42 IST" duration-ms="88987">
     <groups>
     </groups>
-    <test started-at="2024-10-04T09:51:55 IST" name="Test" finished-at="2024-10-04T09:53:03 IST" duration-ms="68591">
+    <test started-at="2024-10-10T15:45:14 IST" name="Test" finished-at="2024-10-10T15:46:42 IST" duration-ms="88987">
       <class name="test.Excel_Blockcurrentday_Manualcheckincheckout">
-        <test-method is-config="true" signature="setup()[pri:0, instance:test.Excel_Blockcurrentday_Manualcheckincheckout@33d512c1]" started-at="2024-10-04T09:51:55 IST" name="setup" finished-at="2024-10-04T09:51:55 IST" duration-ms="89" status="PASS">
+        <test-method is-config="true" signature="setup()[pri:0, instance:test.Excel_Blockcurrentday_Manualcheckincheckout@385c9627]" started-at="2024-10-10T15:45:14 IST" name="setup" finished-at="2024-10-10T15:45:14 IST" duration-ms="70" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method signature="DB_setup(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:test.Excel_Blockcurrentday_Manualcheckincheckout@33d512c1]" started-at="2024-10-04T09:51:55 IST" name="DB_setup" data-provider="sqlQueries" finished-at="2024-10-04T09:51:56 IST" duration-ms="766" status="PASS">
+        <test-method signature="DB_setup(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:test.Excel_Blockcurrentday_Manualcheckincheckout@385c9627]" started-at="2024-10-10T15:45:14 IST" name="DB_setup" data-provider="sqlQueries" finished-at="2024-10-10T15:45:16 IST" duration-ms="2879" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[jdbc:sqlserver://10.0.0.4:51026;databaseName=AHI_GHB_WHMIS; encrypt=false;trustServerCertificate=false]]>
+                <![CDATA[jdbc:sqlserver://qcvm001.eastus.cloudapp.azure.com:51026;databaseName=AHI_GHB_WHMIS; encrypt=true;trustServerCertificate=true]]>
               </value>
             </param>
             <param index="1">
@@ -52,7 +52,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- DB_setup -->
-        <test-method signature="test(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:test.Excel_Blockcurrentday_Manualcheckincheckout@33d512c1]" started-at="2024-10-04T09:51:56 IST" name="test" data-provider="sqlQueries1" finished-at="2024-10-04T09:53:03 IST" duration-ms="67681" status="PASS">
+        <test-method signature="test(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:test.Excel_Blockcurrentday_Manualcheckincheckout@385c9627]" started-at="2024-10-10T15:45:17 IST" name="test" data-provider="sqlQueries1" finished-at="2024-10-10T15:46:42 IST" duration-ms="85986" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -61,7 +61,7 @@
             </param>
             <param index="1">
               <value>
-                <![CDATA[http://qcvm001:88/#/login/AHG]]>
+                <![CDATA[http://qcvm001.eastus.cloudapp.azure.com:88/#/login/AHG]]>
               </value>
             </param>
             <param index="2">

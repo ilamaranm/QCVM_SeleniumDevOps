@@ -2,16 +2,16 @@
 <testng-results ignored="0" total="2" passed="2" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2024-10-09T15:11:34 IST" name="Suite" finished-at="2024-10-09T15:12:57 IST" duration-ms="83331">
+  <suite started-at="2024-10-10T15:38:03 IST" name="Suite" finished-at="2024-10-10T15:39:29 IST" duration-ms="86425">
     <groups>
     </groups>
-    <test started-at="2024-10-09T15:11:34 IST" name="Test" finished-at="2024-10-09T15:12:57 IST" duration-ms="83331">
+    <test started-at="2024-10-10T15:38:03 IST" name="Test" finished-at="2024-10-10T15:39:29 IST" duration-ms="86425">
       <class name="test.Excel_Blockcurrentday_Manualcheckincheckout">
-        <test-method is-config="true" signature="setup()[pri:0, instance:test.Excel_Blockcurrentday_Manualcheckincheckout@3c41ed1d]" started-at="2024-10-09T15:11:34 IST" name="setup" finished-at="2024-10-09T15:11:34 IST" duration-ms="75" status="PASS">
+        <test-method is-config="true" signature="setup()[pri:0, instance:test.Excel_Blockcurrentday_Manualcheckincheckout@2f4948e4]" started-at="2024-10-10T15:38:03 IST" name="setup" finished-at="2024-10-10T15:38:03 IST" duration-ms="133" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method signature="DB_setup(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:test.Excel_Blockcurrentday_Manualcheckincheckout@3c41ed1d]" started-at="2024-10-09T15:11:34 IST" name="DB_setup" data-provider="sqlQueries" finished-at="2024-10-09T15:11:37 IST" duration-ms="3013" status="PASS">
+        <test-method signature="DB_setup(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:test.Excel_Blockcurrentday_Manualcheckincheckout@2f4948e4]" started-at="2024-10-10T15:38:03 IST" name="DB_setup" data-provider="sqlQueries" finished-at="2024-10-10T15:38:06 IST" duration-ms="3132" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -52,7 +52,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- DB_setup -->
-        <test-method signature="test(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:test.Excel_Blockcurrentday_Manualcheckincheckout@3c41ed1d]" started-at="2024-10-09T15:11:37 IST" name="test" data-provider="sqlQueries1" finished-at="2024-10-09T15:12:57 IST" duration-ms="80198" status="PASS">
+        <test-method signature="test(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:test.Excel_Blockcurrentday_Manualcheckincheckout@2f4948e4]" started-at="2024-10-10T15:38:06 IST" name="test" data-provider="sqlQueries1" finished-at="2024-10-10T15:39:29 IST" duration-ms="83081" status="PASS">
           <params>
             <param index="0">
               <value>
