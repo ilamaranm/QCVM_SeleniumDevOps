@@ -1,5 +1,8 @@
-pool:
+pool: 
   vmImage: 'windows-latest'
+
+variables:
+  timezone: 'India Standard Time'  # Set this to India Standard Time
 
 steps:
 
@@ -29,7 +32,15 @@ steps:
     Write-Host "Listing all files in project directory:"
     Get-ChildItem -Recurse -Path $(System.DefaultWorkingDirectory)
   displayName: 'List Project Files'
-  
+
+- powershell: |
+    tzutil /s "$(timezone)"
+    $newTimeZone = tzutil /g
+    Write-Host "Time zone is set to: $newTimeZone"
+    $currentTime = Get-Date -Format "yyyy-MM-dd HH:mm:ss"
+    Write-Host "Current Agent Time: $currentTime"
+  displayName: 'Set Timezone to India Standard Time'
+
 - powershell: |
     mvn clean install
   displayName: 'Build with Maven'
