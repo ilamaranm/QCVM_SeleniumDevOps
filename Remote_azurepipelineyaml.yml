@@ -40,11 +40,16 @@ steps:
     $currentTime = Get-Date -Format "yyyy-MM-dd HH:mm:ss"
     Write-Host "Current Agent Time: $currentTime"
   displayName: 'Set Timezone to India Standard Time'
+  
+- powershell: |
+      $env:SQL_CONNECTION_STRING = 'jdbc:sqlserver://qcvm001.eastus.cloudapp.azure.com:51026;databaseName=AHI_GHB_WHMIS; encrypt=true;trustServerCertificate=true;loginTimeout=300;socketTimeout=60000'
+      Write-Host "##vso[task.setvariable variable=SQL_CONNECTION_STRING]$env:SQL_CONNECTION_STRING"
+  displayName: 'Set SQL Server Connection String'
 
 - powershell: |
     mvn clean install
   displayName: 'Build with Maven'
 
 - powershell: |
-    mvn test -Dsql.connection.string=$(SQL_CONNECTION_STRING)
+    mvn test -Dsql.connection.string="$env:SQL_CONNECTION_STRING"
   displayName: 'Run Maven Tests'
