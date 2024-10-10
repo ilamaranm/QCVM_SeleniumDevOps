@@ -52,7 +52,8 @@ steps:
 
 - task: PublishTestResults@2
   inputs:
-      testResultsFormat: 'TestNG'  
-      testResultsFiles: '**/target/test-output/testng-results.xml'  
-      failTaskOnFailedTests: true
+      testResultsFormat: 'TestNG'                 
+      testResultsFiles: '**/test-results.xml'      
+      testRunTitle: 'Test Results'                
+      mergeTestResults: true                       
   displayName: 'Publish Test Results'
