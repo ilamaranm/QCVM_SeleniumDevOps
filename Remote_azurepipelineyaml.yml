@@ -42,7 +42,7 @@ steps:
   displayName: 'Set Timezone to India Standard Time'
   
 - powershell: |
-      $env:SQL_CONNECTION_STRING = 'jdbc:sqlserver://qcvm001.eastus.cloudapp.azure.com:51026;databaseName=AHI_GHB_WHMIS; encrypt=true;trustServerCertificate=true;loginTimeout=300;socketTimeout=60000'
+      $env:SQL_CONNECTION_STRING = "jdbc:sqlserver://qcvm001.eastus.cloudapp.azure.com\\MSSQLSERVER2022;databaseName=AHI_GHB_WHMIS;encrypt=true;trustServerCertificate=true"
       Write-Host "##vso[task.setvariable variable=SQL_CONNECTION_STRING]$env:SQL_CONNECTION_STRING"
   displayName: 'Set SQL Server Connection String'
 
