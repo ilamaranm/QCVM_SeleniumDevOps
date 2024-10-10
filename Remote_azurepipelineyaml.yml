@@ -61,7 +61,7 @@ steps:
 - task: PublishCodeCoverageResults@1
   inputs:
       codeCoverageTool: 'JaCoCo'
-      summaryFileLocation: '$(Build.SourcesDirectory)/target/site/jacoco/index.html'
-      reportDirectory: '$(Build.SourcesDirectory)/target/site/jacoco'
+      summaryFileLocation: '$(Build.SourcesDirectory)/target/jacoco-report/index.html'  # Path to the summary report (HTML)
+      reportDirectory: '$(Build.SourcesDirectory)/target/jacoco-report'  # Path to the directory containing JaCoCo reports
       failIfCoverageEmpty: true
   displayName: 'Publish Code Coverage Results'
