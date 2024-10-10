@@ -47,9 +47,12 @@ steps:
   displayName: 'Set SQL Server Connection String'
 
 - powershell: |
-    mvn clean install
-  displayName: 'Build with Maven'
+      mvn clean install "-Dsql.connection.string=$($env:SQL_CONNECTION_STRING)"
+  displayName: 'Build and Run Tests with Maven'
 
-- powershell: |
-   mvn test "-Dsql.connection.string=$($env:SQL_CONNECTION_STRING)"
-  displayName: 'Run Maven Tests'
+- task: PublishTestResults@2
+  inputs:
+      testResultsFormat: 'TestNG'  
+      testResultsFiles: '**/target/test-output/testng-results.xml'  
+      failTaskOnFailedTests: true
+  displayName: 'Publish Test Results'
