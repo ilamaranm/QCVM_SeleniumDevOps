@@ -51,5 +51,5 @@ steps:
   displayName: 'Build with Maven'
 
 - powershell: |
-    mvn test -Dsql.connection.string="$env:SQL_CONNECTION_STRING"
+   mvn test "-Dsql.connection.string=$($env:SQL_CONNECTION_STRING)"
   displayName: 'Run Maven Tests'
