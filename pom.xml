@@ -33,6 +33,9 @@
                 			<goal>prepare-agent</goal>
             			</goals>
             			<phase>prepare-package</phase>
+            			<configuration>
+              				<destFile>${project.build.directory}/jacoco.exec</destFile>
+            			</configuration>
         			</execution>
         			<execution>
         			  <id>jacoco-report</id>
@@ -40,8 +43,8 @@
                 			<goal>report</goal>
            				 </goals>
            					 <phase>post-integration-test</phase>
-            		<configuration>
-                		<outputDirectory>${project.build.directory}/jacoco-report</outputDirectory>
+           			<configuration>
+                		   <outputDirectory>${project.build.directory}/jacoco-report</outputDirectory>
             		</configuration>
         			</execution>
    					 </executions>

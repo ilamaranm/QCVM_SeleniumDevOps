@@ -52,6 +52,10 @@ steps:
   env:
         SQL_CONNECTION_STRING: $(SQL_CONNECTION_STRING)
 
+- powershell: |
+        Get-ChildItem -Path $(Build.SourcesDirectory)\target\*.exec
+  displayName: 'Check if jacoco.exec is generated'
+
 - task: PublishTestResults@2
   inputs:
     testResultsFormat: 'JUnit'                 
