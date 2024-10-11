@@ -54,16 +54,17 @@ steps:
 
 - task: PublishTestResults@2
   inputs:
-      testResultsFormat: 'JUnit'                 
-      testResultsFiles: 'target/test-output/*.xml'      
-      testRunTitle: 'Test Results'                
-      mergeTestResults: true                       
+    testResultsFormat: 'JUnit'                 
+    testResultsFiles: 'target/test-output/*.xml'      
+    testRunTitle: 'Test Results'                
+    mergeTestResults: true                       
   displayName: 'Publish Test Results'
 
 - task: PublishCodeCoverageResults@2
   inputs:
-      codeCoverageTool: 'JaCoCo'
-      summaryFileLocation: '$(Build.SourcesDirectory)/target/jacoco-report/index.html'  # Path to the summary report (HTML)
-      reportDirectory: '$(Build.SourcesDirectory)/target/jacoco-report'  # Path to the directory containing JaCoCo reports
-      failIfCoverageEmpty: true
+    codeCoverageTool: 'JaCoCo'
+    summaryFileLocation: '$(Build.SourcesDirectory)/target/jacoco-report/index.html'  # Path to the summary report (HTML)
+    reportDirectory: '$(Build.SourcesDirectory)/target/jacoco-report'  # Path to the directory containing JaCoCo reports
+    failIfCoverageEmpty: true
+    mergeTestResults: true     
   displayName: 'Publish Code Coverage Results'

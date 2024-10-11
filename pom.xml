@@ -32,6 +32,7 @@
                         <goal>prepare-agent</goal>
                         <goal>report</goal>
                     </goals>
+                    <phase>prepare-package</phase>
                     <configuration>
                         <outputDirectory>${project.build.directory}/jacoco-report</outputDirectory> 
                     </configuration>
@@ -64,7 +65,7 @@
         </plugins>
     </build>
   
-  <dependencies>
+<dependencies>
   
 <dependency>
 <groupId>org.seleniumhq.selenium</groupId>
