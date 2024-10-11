@@ -53,7 +53,12 @@ steps:
         SQL_CONNECTION_STRING: $(SQL_CONNECTION_STRING)
 
 - powershell: |
-        Get-ChildItem -Path $(Build.SourcesDirectory)\target\*.exec
+   $jacocoExecFile = Get-ChildItem -Path $(Build.SourcesDirectory)/target/*.exec
+    if ($jacocoExecFile) {
+        Write-Host "JaCoCo exec file found: $($jacocoExecFile.FullName)"
+    } else {
+        Write-Host "JaCoCo exec file not found"
+    }
   displayName: 'Check if jacoco.exec is generated'
 
 - task: PublishTestResults@2
