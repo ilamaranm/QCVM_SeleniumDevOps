@@ -47,7 +47,7 @@ steps:
   displayName: 'Set SQL Server Connection String'
 
 - powershell: |
-      mvn clean install jacoco:report   -Dsql.connection.string="$env:SQL_CONNECTION_STRING" jacoco:report
+      mvn clean install jacoco:report  -Dsql.connection.string="$env:SQL_CONNECTION_STRING" jacoco:report
   displayName: 'Build and Run Tests with Maven and JaCoCo'
 
 - task: PublishTestResults@2
