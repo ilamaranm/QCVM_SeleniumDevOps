@@ -47,7 +47,7 @@ steps:
   displayName: 'Set SQL Server Connection String'
 
 - powershell: |
-        mvn clean install jacoco:report -Dsql.connection.string="$env:SQL_CONNECTION_STRING"
+      mvn -Dsql.connection.string="$env:SQL_CONNECTION_STRING" clean install jacoco:report
   displayName: 'Build and Run Tests with Maven and JaCoCo'
 
 - task: PublishTestResults@2
@@ -58,7 +58,7 @@ steps:
       mergeTestResults: true                       
   displayName: 'Publish Test Results'
 
-- task: PublishCodeCoverageResults@1
+- task: PublishCodeCoverageResults@2
   inputs:
       codeCoverageTool: 'JaCoCo'
       summaryFileLocation: '$(Build.SourcesDirectory)/target/jacoco-report/index.html'  # Path to the summary report (HTML)
