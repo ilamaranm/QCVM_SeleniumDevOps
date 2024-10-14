@@ -25,7 +25,7 @@
       <span class="top-banner-title-font">Test results</span>
       <button id="button" class="button">Switch Retro Theme</button> <!-- button -->
       <br/>
-      <span class="top-banner-font-1">1 suite</span>
+      <span class="top-banner-font-1">1 suite, 1 failed test</span>
     </div> <!-- top-banner-root -->
     <div class="navigator-root">
       <div class="navigator-suite-header">
@@ -39,7 +39,7 @@
         <div class="rounded-window">
           <div class="suite-header light-rounded-window-top">
             <a href="#" panel-name="suite-Suite" class="navigator-link">
-              <span class="suite-name border-passed">Suite</span>
+              <span class="suite-name border-failed">Suite</span>
             </a> <!-- navigator-link -->
           </div> <!-- suite-header light-rounded-window-top -->
           <div class="navigator-suite-content">
@@ -92,7 +92,21 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">2 methods,   2 passed</span>
+                    <span class="method-stats">2 methods, 1 failed,   1 passed</span>
+                  </li>
+                  <li>
+                    <span class="method-list-title failed">Failed methods</span>
+                    <span class="show-or-hide-methods failed">
+                      <a href="#" panel-name="suite-Suite" class="hide-methods failed suite-Suite"> (hide)</a> <!-- hide-methods failed suite-Suite -->
+                      <a href="#" panel-name="suite-Suite" class="show-methods failed suite-Suite"> (show)</a> <!-- show-methods failed suite-Suite -->
+                    </span>
+                    <div class="method-list-content failed suite-Suite">
+                      <span>
+                        <img src="failed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Suite" title="test.Excel_Blockcurrentday_Manualcheckincheckout" class="method navigator-link" hash-for-method="test(C:\webdriver\chromedriver-win64\chromedriver.exe, http://qcvm001.eastus.cloudapp.azure.com:88/#/logi...)">test(C:\webdriver\chromedriver-win64\chromedriver.exe, http://qcvm001.eastus.cloudapp.azure.com:88/#/logi...)</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                    </div> <!-- method-list-content failed suite-Suite -->
                   </li>
                   <li>
                     <span class="method-list-title passed">Passed methods</span>
@@ -104,11 +118,6 @@
                       <span>
                         <img src="passed.png" width="3%"/>
                         <a href="#" panel-name="suite-Suite" title="test.Excel_Blockcurrentday_Manualcheckincheckout" class="method navigator-link" hash-for-method="DB_setup(jdbc:sqlserver://qcvm001.eastus.cloudapp.azure.com:51026;databaseName=AHI_GHB_WHMIS; encrypt=true;tr...)">DB_setup(jdbc:sqlserver://qcvm001.eastus.cloudapp.azure.com:51026;databaseName=AHI_GHB_WHMIS; encrypt=true;tr...)</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
-                      <span>
-                        <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Suite" title="test.Excel_Blockcurrentday_Manualcheckincheckout" class="method navigator-link" hash-for-method="test(C:\webdriver\chromedriver-win64\chromedriver.exe, http://qcvm001.eastus.cloudapp.azure.com:88/#/logi...)">test(C:\webdriver\chromedriver-win64\chromedriver.exe, http://qcvm001.eastus.cloudapp.azure.com:88/#/logi...)</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                     </div> <!-- method-list-content passed suite-Suite -->
@@ -123,6 +132,46 @@
     <div class="wrapper">
       <div class="main-panel-root">
         <div panel-name="suite-Suite" class="panel Suite">
+          <div class="suite-Suite-class-failed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="failed.png"/>
+              <span class="class-name">test.Excel_Blockcurrentday_Manualcheckincheckout</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="test(C:\webdriver\chromedriver-win64\chromedriver.exe, http://qcvm001.eastus.cloudapp.azure.com:88/#/logi...)">
+                  </a> <!-- test(C:\webdriver\chromedriver-win64\chromedriver.exe, http://qcvm001.eastus.cloudapp.azure.com:88/#/logi...) -->
+                  <span class="method-name">test</span>
+                  <span class="parameters">(C:\webdriver\chromedriver-win64\chromedriver.exe,http://qcvm001.eastus.cloudapp.azure.com:88/#/login/AHG,seleniumuser,takecare,http://localhost:96/login,afi,takecare,takecare)</span>
+                  <div class="stack-trace">org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//div[text()=&apos;11:50 AM - 12:00 AM&apos;]&quot;}
+  (Session info: chrome=129.0.6668.100)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Build info: version: &apos;4.25.0&apos;, revision: &apos;8a8aea2337&apos;
+System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;21.0.4&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [6dbfa76b8187f47d8e23c8cd32ae893b, findElement {using=xpath, value=//div[text()=&apos;11:50 AM - 12:00 AM&apos;]}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 129.0.6668.100, chrome: {chromedriverVersion: 129.0.6668.91 (b00bc8b76d60..., userDataDir: C:\Users\vpm85\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:50334}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:50334/devtoo..., se:cdpVersion: 129.0.6668.100, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 6dbfa76b8187f47d8e23c8cd32ae893b
+	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:190)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:545)
+	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
+	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:368)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:362)
+	at test.Excel_Blockcurrentday_Manualcheckincheckout.test(Excel_Blockcurrentday_Manualcheckincheckout.java:209)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+... Removed 32 stack frames
+</div> <!-- stack-trace -->
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-Suite-class-failed -->
           <div class="suite-Suite-class-passed">
             <div class="main-panel-header rounded-window-top">
               <img src="passed.png"/>
@@ -135,14 +184,6 @@
                   </a> <!-- DB_setup(jdbc:sqlserver://qcvm001.eastus.cloudapp.azure.com:51026;databaseName=AHI_GHB_WHMIS; encrypt=true;tr...) -->
                   <span class="method-name">DB_setup</span>
                   <span class="parameters">(jdbc:sqlserver://qcvm001.eastus.cloudapp.azure.com:51026;databaseName=AHI_GHB_WHMIS; encrypt=true;trustServerCertificate=true,sa,befrank!1,SELECT distinct cons.cons_usr_id, cons.cons_id, cons.Cons_Name, sp.sp_cd , sp.sp_name FROM  ConsultM AS cons INNER JOIN  ConsultLocationM AS consloc ON cons.Cons_Id = consloc.Cons_Id INNER JOIN  ConsSpecialityM AS conssp ON consloc.LOC_id = conssp.Loc_ID AND consloc.Cons_Id = conssp.Cons_ID INNER JOIN  SpecialityM AS sp ON cons.sp_cd = sp.Sp_Cd WHERE (cons.Cons_IsActive = 1 AND consloc.LOC_id = 1) ,select Nation_Max_Mob_Len,nation_id,nation_name,nation_country_code from NationM where isnull(Nation_Max_Mob_Len,0)<>0,Select distinct A.AC_CD,AC_desc,D.Tpm_Cd,H.Tpm_name from ACCTM A Inner join CusClassLocation C on A.Ac_Cd=C.AC_CD Inner Join TestPriceMD D on C.Tpm_Cd= D.Tpm_Cd Inner Join TestPriceMH H on H.Tpm_Cd= D.Tpm_Cd where A.Is_Active=1 and A.Pymt_Mode='C' and C.LOC_id='1' ,SELECT LocM.Loc_Id, LocM.Loc_Name, CoM.Co_Name FROM LocationM LocM JOIN CompM CoM ON LocM.Co_Cd = CoM.Co_Cd WHERE LocM.IsActive = 1 and LocM.Loc_Id = 1  ORDER BY LocM.Loc_Name )</span>
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-              <div class="method">
-                <div class="method-content">
-                  <a name="test(C:\webdriver\chromedriver-win64\chromedriver.exe, http://qcvm001.eastus.cloudapp.azure.com:88/#/logi...)">
-                  </a> <!-- test(C:\webdriver\chromedriver-win64\chromedriver.exe, http://qcvm001.eastus.cloudapp.azure.com:88/#/logi...) -->
-                  <span class="method-name">test</span>
-                  <span class="parameters">(C:\webdriver\chromedriver-win64\chromedriver.exe,http://qcvm001.eastus.cloudapp.azure.com:88/#/login/AHG,seleniumuser,takecare,http://localhost:96/login,afi,takecare,takecare)</span>
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
@@ -203,11 +244,11 @@ data.addRows(2);
 data.setCell(0, 0, 0)
 data.setCell(0, 1, 'test')
 data.setCell(0, 2, 'test.Excel_Blockcurrentday_Manualcheckincheckout')
-data.setCell(0, 3, 102770);
+data.setCell(0, 3, 93531);
 data.setCell(1, 0, 1)
 data.setCell(1, 1, 'DB_setup')
 data.setCell(1, 2, 'test.Excel_Blockcurrentday_Manualcheckincheckout')
-data.setCell(1, 3, 3339);
+data.setCell(1, 3, 3333);
 window.suiteTableData['Suite']= { tableData: data, tableDiv: 'times-div-Suite'}
 return data;
 }
@@ -245,11 +286,13 @@ return data;
               </div> <!-- configuration-class before -->
               <div class="test-method">
                 <span class="method-name">DB_setup(jdbc:sqlserver://qcvm001.eastus.cloudapp.azure.com:51026;databaseName=AHI_GHB_WHMIS; encrypt=true;tr...)</span>
-                <span class="method-start">133 ms</span>
+                <span class="method-start">181 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
+                <img src="failed.png">
+                </img>
                 <span class="method-name">test(C:\webdriver\chromedriver-win64\chromedriver.exe, http://qcvm001.eastus.cloudapp.azure.com:88/#/logi...)</span>
-                <span class="method-start">3478 ms</span>
+                <span class="method-start">3520 ms</span>
               </div> <!-- test-method -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->

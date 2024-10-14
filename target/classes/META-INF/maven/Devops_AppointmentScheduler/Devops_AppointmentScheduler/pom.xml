@@ -52,7 +52,7 @@
             <goals>
                 <goal>report</goal>
             </goals>
-            <phase>test</phase>
+            <phase>verify</phase>
             <configuration>
                 <outputDirectory>${project.build.directory}/jacoco-report</outputDirectory>
             </configuration>
