@@ -47,7 +47,7 @@ steps:
   displayName: 'Set SQL Server Connection String'
 
 - powershell: |
-        mvn clean test verify jacoco:report
+        mvn clean test verify 
   displayName: 'Build and Run Tests with Maven and JaCoCo'
   env:
         SQL_CONNECTION_STRING: $(SQL_CONNECTION_STRING)
@@ -61,12 +61,16 @@ steps:
     }
   displayName: 'Check if jacoco.exec is generated'
 
+- powershell: |
+      Start-Sleep -Seconds 10
+  displayName: 'Wait for JaCoCo Report to be Generated'
+ 
 - task: PublishTestResults@2
   inputs:
-    testResultsFormat: 'JUnit'                 
-    testResultsFiles: 'target/test-output/*.xml'      
-    testRunTitle: 'Test Results'                
-    mergeTestResults: true                       
+      testResultsFormat: 'TestNG'
+      testResultsFiles: 'target/test-output/testng-results.xml'
+      testRunTitle: 'TestNG Results'
+      mergeTestResults: true
   displayName: 'Publish Test Results'
 
 - task: PublishCodeCoverageResults@2
