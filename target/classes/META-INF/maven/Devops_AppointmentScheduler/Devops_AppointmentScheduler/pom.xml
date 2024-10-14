@@ -20,7 +20,8 @@
             		</goals>
     		 		<configuration>
         				<testFailureIgnore>false</testFailureIgnore>
-        				<reportsDirectory>${project.build.directory}/test-output</reportsDirectory>
+        				<useSystemClassLoader>false</useSystemClassLoader>
+    					<reportsDirectory>target/test-output</reportsDirectory>
         				<suiteXmlFiles>
                     		<suiteXmlFile>src/test/resources/testng.xml</suiteXmlFile> 
                			 </suiteXmlFiles>

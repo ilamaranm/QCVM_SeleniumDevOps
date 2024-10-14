@@ -62,13 +62,17 @@ steps:
   displayName: 'Check if jacoco.exec is generated'
 
 - powershell: |
+      Get-ChildItem -Recurse -Path '$(Build.SourcesDirectory)' | Where-Object { $_.Name -like '*testng-results.xml' }
+  displayName: 'Find TestNG Results'  
+  
+- powershell: |
       Start-Sleep -Seconds 10
   displayName: 'Wait for JaCoCo Report to be Generated'
  
 - task: PublishTestResults@2
   inputs:
-      testResultsFormat: 'JUnit'
-      testResultsFiles: '**/target/test-output/*.xml'
+      testResultsFormat: 'TestNG'
+      testResultsFiles: '$(Build.SourcesDirectory)/target/test-output/testng-results.xml'
       testRunTitle: 'TestNG Results'
       mergeTestResults: true
   displayName: 'Publish Test Results'
