@@ -71,7 +71,7 @@ steps:
  
 - task: PublishTestResults@2
   inputs:
-      testResultsFormat: 'TestNG'
+      testResultsFormat: 'JUnit'
       testResultsFiles: '$(Build.SourcesDirectory)/target/test-output/testng-results.xml'
       testRunTitle: 'TestNG Results'
       mergeTestResults: true
