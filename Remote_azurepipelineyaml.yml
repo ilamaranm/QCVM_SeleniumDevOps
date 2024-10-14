@@ -68,7 +68,7 @@ steps:
 - task: PublishTestResults@2
   inputs:
       testResultsFormat: 'JUnit'
-      testResultsFiles: '**/test-output/testng-results.xml'
+      testResultsFiles: '**/target/test-output/*.xml'
       testRunTitle: 'TestNG Results'
       mergeTestResults: true
   displayName: 'Publish Test Results'
