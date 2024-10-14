@@ -68,7 +68,7 @@ steps:
 - task: PublishTestResults@2
   inputs:
       testResultsFormat: 'JUnit'
-      testResultsFiles: 'target/test-output/testng-results.xml'
+      testResultsFiles: '**/test-output/testng-results.xml'
       testRunTitle: 'TestNG Results'
       mergeTestResults: true
   displayName: 'Publish Test Results'
@@ -76,7 +76,7 @@ steps:
 - task: PublishCodeCoverageResults@2
   inputs:
     codeCoverageTool: 'JaCoCo'
-    summaryFileLocation: '$(Build.SourcesDirectory)/target/jacoco-report/index.html'  
+    summaryFileLocation: '$(Build.SourcesDirectory)/target/jacoco-report/jacoco.xml'  
     reportDirectory: '$(Build.SourcesDirectory)/target/jacoco-report'  
     failIfCoverageEmpty: true
     mergeTestResults: true     
