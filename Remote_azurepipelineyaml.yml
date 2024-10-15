@@ -78,7 +78,7 @@ steps:
 - task: PublishTestResults@2
   inputs:
       testResultsFormat: 'JUnit'
-      testResultsFiles: '/target/test-output/junitreports/TEST-*.xml'
+      testResultsFiles: '**/junitreports/TEST-*.xml'
       testRunTitle: 'JUnit Results'
       mergeTestResults: true
   displayName: 'Publish Test Results'
