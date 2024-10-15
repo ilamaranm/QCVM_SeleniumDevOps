@@ -62,9 +62,19 @@ steps:
   displayName: 'Check if jacoco.exec is generated'
 
 - powershell: |
+      Get-ChildItem -Recurse -Path $(Build.SourcesDirectory)/target/jacoco-report
+  displayName: 'List JaCoCo Report Files'
+  
+- powershell: |
       Start-Sleep -Seconds 10
   displayName: 'Wait for JaCoCo Report to be Generated'
- 
+
+- script: |
+      curl -Os https://uploader.codecov.io/latest/windows/codecov.exe
+      ./codecov.exe -f $(Build.SourcesDirectory)/target/jacoco-report/jacoco.xml
+  displayName: 'Upload Coverage to Codecov'
+  condition: succeededOrFailed()
+  
 - task: PublishTestResults@2
   inputs:
       testResultsFormat: 'JUnit'
