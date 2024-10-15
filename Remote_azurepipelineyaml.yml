@@ -71,7 +71,7 @@ steps:
 
 - script: |
       curl -Os https://uploader.codecov.io/latest/windows/codecov.exe
-      codecov.exe -f $(Build.SourcesDirectory)/target/jacoco-report/jacoco.xml
+      codecov.exe -f "$(Build.SourcesDirectory)\\target\\jacoco-report\\jacoco.xml" -t "your_codecov_token"
   displayName: 'Upload Coverage to Codecov'
   condition: succeededOrFailed()
   
