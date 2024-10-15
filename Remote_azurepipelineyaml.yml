@@ -77,7 +77,7 @@ steps:
   inputs:
     codeCoverageTool: 'JaCoCo'
     summaryFileLocation: '$(Build.SourcesDirectory)/target/jacoco-report/jacoco.xml'  
-    reportDirectory: '$(Build.SourcesDirectory)/target/jacoco-report'  
+    reportDirectory: '$(Build.SourcesDirectory)/target/jacoco-report/html'  
     failIfCoverageEmpty: true
     mergeTestResults: true     
   displayName: 'Publish Code Coverage Results'

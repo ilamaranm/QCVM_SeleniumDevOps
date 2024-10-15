@@ -56,6 +56,16 @@
             <phase>verify</phase>
             <configuration>
                 <outputDirectory>${project.build.directory}/jacoco-report</outputDirectory>
+                <reports>
+                    <xml>
+                        <enabled>true</enabled>
+                        <destFile>${project.build.directory}/jacoco-report/jacoco.xml</destFile>
+                    </xml>
+                    <html>
+                        <enabled>true</enabled>
+                        <outputDirectory>${project.build.directory}/jacoco-report/html</outputDirectory>
+                    </html>
+                </reports>
             </configuration>
         </execution>
     </executions>
