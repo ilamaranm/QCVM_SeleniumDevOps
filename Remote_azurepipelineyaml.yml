@@ -46,12 +46,12 @@ steps:
       Write-Host "##vso[task.setvariable variable=SQL_CONNECTION_STRING]$env:SQL_CONNECTION_STRING"
   displayName: 'Set SQL Server Connection String'
 
-- powershell: |
-        mvn clean install
-  displayName: 'Build and Run Tests with Maven and JaCoCo'
-  env:
-        SQL_CONNECTION_STRING: $(SQL_CONNECTION_STRING)
-
+- task: Maven@3
+  inputs:
+      mavenPomFile: 'pom.xml'
+      goals: 'clean verify'
+  displayName: 'Run Maven Clean Verify to Build and Test'
+  
 - powershell: |
    $jacocoExecFile = Get-ChildItem -Path $(Build.SourcesDirectory)/target/*.exec
     if ($jacocoExecFile) {
