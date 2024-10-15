@@ -71,7 +71,7 @@ steps:
 
 - script: |
       curl -Os https://uploader.codecov.io/latest/windows/codecov.exe
-      codecov.exe -f "$(Build.SourcesDirectory)\\target\\jacoco-report\\jacoco.xml" -t "your_codecov_token"
+      codecov.exe -f "$(Build.SourcesDirectory)\\target\\jacoco-report\\jacoco.xml" -t "$(CODECOV_TOKEN)"
   displayName: 'Upload Coverage to Codecov'
   condition: succeededOrFailed()
   
@@ -86,8 +86,6 @@ steps:
 - task: PublishCodeCoverageResults@2
   inputs:
     codeCoverageTool: 'JaCoCo'
-    summaryFileLocation: '$(Build.SourcesDirectory)/target/jacoco-report/jacoco.xml'  
-    reportDirectory: '$(Build.SourcesDirectory)/target/jacoco-report/html'  
-    failIfCoverageEmpty: true
+    summaryFileLocation: '/target/jacoco-report/jacoco.xml'  
     mergeTestResults: true     
   displayName: 'Publish Code Coverage Results'
