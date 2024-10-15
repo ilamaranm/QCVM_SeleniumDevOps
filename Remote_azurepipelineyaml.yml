@@ -82,10 +82,11 @@ steps:
       testRunTitle: 'JUnit Results'
       mergeTestResults: true
   displayName: 'Publish Test Results'
+
 - task: PublishCodeCoverageResults@2
   inputs:
     codeCoverageTool: 'JaCoCo'
-    summaryFileLocation: '/target/jacoco-report/jacoco.xml'  
+    summaryFileLocation: '**/jacoco-report/jacoco.xml'  
     mergeTestResults: true     
   displayName: 'Publish Code Coverage Results'
 
