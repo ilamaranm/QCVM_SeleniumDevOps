@@ -62,8 +62,9 @@ steps:
   displayName: 'Check if jacoco.exec is generated'
 
 - powershell: |
+      Get-ChildItem -Recurse -Path $(Build.SourcesDirectory)/target
       Get-ChildItem -Recurse -Path $(Build.SourcesDirectory)/target/jacoco-report
-  displayName: 'List JaCoCo Report Files'
+  displayName: 'List Target and JaCoCo Report Files'
   
 - powershell: |
       Start-Sleep -Seconds 10
@@ -71,7 +72,7 @@ steps:
 
 - script: |
       curl -Os https://uploader.codecov.io/latest/windows/codecov.exe
-      codecov.exe -f "$(Build.SourcesDirectory)\\target\\jacoco-report\\jacoco.xml" -t "206ae66c-40cd-4cdf-82cd-b04a2e5f179d"
+      codecov.exe -f "$(Build.SourcesDirectory)\\target\\jacoco-report\\jacoco.xml\\jacoco.xml" -t "206ae66c-40cd-4cdf-82cd-b04a2e5f179d"
   displayName: 'Upload Coverage to Codecov'
   condition: succeededOrFailed()
   
