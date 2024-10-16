@@ -55,7 +55,7 @@
             </goals>
             <phase>verify</phase>
             <configuration>
-                <outputDirectory>target/jacoco-report/jacoco.xml.</outputDirectory>
+                <outputDirectory>target/jacoco-report</outputDirectory>
             </configuration>
         </execution>
     </executions>

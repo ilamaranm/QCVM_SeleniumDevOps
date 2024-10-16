@@ -72,14 +72,20 @@ steps:
 
 - script: |
       curl -Os https://uploader.codecov.io/latest/windows/codecov.exe
-      codecov.exe -f "$(Build.SourcesDirectory)\\target\\jacoco-report\\jacoco.xml\\jacoco.xml" -t "206ae66c-40cd-4cdf-82cd-b04a2e5f179d"
+      codecov.exe -f "$(Build.SourcesDirectory)\\target\\jacoco-report\\jacoco.xml" -t "206ae66c-40cd-4cdf-82cd-b04a2e5f179d"
   displayName: 'Upload Coverage to Codecov'
   condition: succeededOrFailed()
-  
+
+- task: PublishPipelineArtifact@1
+  inputs:
+      targetPath: '$(Build.SourcesDirectory)\target\jacoco-report'
+      artifact: 'jacoco-report'
+  displayName: 'Publish JaCoCo Report as Artifact'  
+
 - task: PublishTestResults@2
   inputs:
       testResultsFormat: 'JUnit'
-      testResultsFiles: '**/junitreports/TEST-*.xml'
+      testResultsFiles: '$(Build.SourcesDirectory)\junitreports\TEST-*.xml'
       testRunTitle: 'JUnit Results'
       mergeTestResults: true
   displayName: 'Publish Test Results'
@@ -87,7 +93,7 @@ steps:
 - task: PublishCodeCoverageResults@2
   inputs:
     codeCoverageTool: 'JaCoCo'
-    summaryFileLocation: '**/jacoco-report/jacoco.xml'  
+    summaryFileLocation: '$(Build.SourcesDirectory)\jacoco-report\jacoco.xml'  
     mergeTestResults: true     
   displayName: 'Publish Code Coverage Results'
 
