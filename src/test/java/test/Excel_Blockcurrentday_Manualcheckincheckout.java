@@ -192,7 +192,7 @@ public class Excel_Blockcurrentday_Manualcheckincheckout extends DB_utility {
 		WebElement spec_search=driver.findElement(By.xpath("(//input[@id='txtSearch'])[1]"));
 		spec_search.click();
 		spec_search.sendKeys(splname);
-		driver.findElement(By.id("lblSpeciality-0")).click();
+		driver.findElement(By.xpath("//label[text()=' "+splname+" ']")).click();
 		Thread.sleep(2000);
 		
 		try {
@@ -200,7 +200,7 @@ public class Excel_Blockcurrentday_Manualcheckincheckout extends DB_utility {
 		    wait.until(ExpectedConditions.visibilityOf(cons_search));
 		    cons_search.click();
 		    cons_search.sendKeys(consname);
-		    driver.findElement(By.id("lblpractitioner_0")).click();
+		    driver.findElement(By.xpath("//label[text()=' "+consname+" ']")).click();
 		} catch (Exception e) {
 		    System.out.println("cons_search element is not present in the DOM");
 		}
