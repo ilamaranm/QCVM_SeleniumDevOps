@@ -47,7 +47,7 @@ steps:
   displayName: 'Set SQL Server Connection String'
 
 - powershell: |
-          mvn clean verify
+          mvn clean verify jacoco:report
   displayName: 'Build and Run Tests with Maven and JaCoCo'
   env:
           SQL_CONNECTION_STRING: $(SQL_CONNECTION_STRING)
@@ -61,6 +61,11 @@ steps:
     }
   displayName: 'Check if jacoco.exec is generated'
 
+- powershell: |
+      New-Item -Path $(Build.SourcesDirectory)\target\test-directory -ItemType Directory
+      Set-Content -Path $(Build.SourcesDirectory)\target\test-directory\testfile.txt -Value "Test file content"
+  displayName: 'Test Write Permissions'
+  
 - powershell: |
       Get-ChildItem -Recurse -Path $(Build.SourcesDirectory)/target
       Get-ChildItem -Recurse -Path $(Build.SourcesDirectory)/jacoco-report
