@@ -3,9 +3,10 @@
   <groupId>Devops_AppointmentScheduler</groupId>
   <artifactId>Devops_AppointmentScheduler</artifactId>
   <version>0.0.1-SNAPSHOT</version>
-  
+
   <properties>
      <java.version>21</java.version>
+     <maven.test.skip>false</maven.test.skip>
   </properties>	
  	<build>
         <plugins>
@@ -57,6 +58,7 @@
             <configuration>
                 <outputDirectory>${project.build.directory}/jacoco-report</outputDirectory>
                 <classesDirectory>${project.build.directory}/classes</classesDirectory>
+                <testClassesDirectory>${project.build.directory}/test-classes</testClassesDirectory>
             </configuration>
         </execution>
     </executions>
