@@ -173,9 +173,11 @@ public class Excel_DisableApprxTime extends DB_utility  {
 		}
 		WebElement time1=driver.findElement(By.xpath("//input[@id='timfirst1']"));
 		time1.click();
+		time1.clear();
 		time1.sendKeys("8.00");
 		WebElement time2=driver.findElement(By.xpath("//input[@id='timfirst2']"));
 		time2.click();
+		time2.clear();
 		time2.sendKeys("21.00");
 		Thread.sleep(2000);
 		WebElement schedule2=driver.findElement(By.xpath("//input[@id='chkSheduleII']"));
