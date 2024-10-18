@@ -46,7 +46,7 @@ public class Excel_DisableApprxTime extends DB_utility  {
 	private String state1;
 	private String state2;
 	
-	@Test(dataProvider="sqlQueries1")
+	@Test(dataProvider="sqlQueries1",priority=1)
 	public void test(String driverpath,String Webhislink, String usr, String pas,String emrlink,String emrafilogin,String emrafipass,String emrpass) throws InterruptedException, IOException {
 
 		Excel_utility exl=new Excel_utility(filepath);

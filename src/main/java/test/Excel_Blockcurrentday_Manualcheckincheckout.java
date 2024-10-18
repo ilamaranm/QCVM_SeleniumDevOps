@@ -42,7 +42,7 @@ public class Excel_Blockcurrentday_Manualcheckincheckout extends DB_utility {
 	private String state1;
 	
 	
-	@Test(dataProvider="sqlQueries1")
+	@Test(dataProvider="sqlQueries1",priority=1)
 	public void test(String driverpath,String Webhislink, String usr, String pas,String emrlink,String emrafilogin,String emrafipass,String emrpass) throws InterruptedException, IOException {
 
 		Screenshot_utility scrnshot=new Screenshot_utility();
