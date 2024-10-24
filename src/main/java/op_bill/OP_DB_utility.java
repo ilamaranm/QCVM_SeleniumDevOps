@@ -1,4 +1,4 @@
-package test;
+package op_bill;
 
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -31,13 +31,13 @@ import com.itextpdf.kernel.pdf.PdfDocument;
 import com.itextpdf.kernel.pdf.PdfWriter;
 import com.itextpdf.layout.Document;
 
-public class DB_utility {
+public class OP_DB_utility {
 	
 	protected WebDriver driver;
 	protected WebDriverWait wait;
 	protected JavascriptExecutor js;
 	protected int locationindx;
-	protected String Webhislink;
+	protected String Webhislink="http://localhost:93/#/login/GAMC";
 	protected String usr="seleniumuser";
 	protected String pas="takecare";
 	protected Faker rndname;
@@ -78,7 +78,7 @@ public class DB_utility {
 	protected String querypath=System.getenv("path2");
 	protected String loginpath=System.getenv("path3");
 	
-	public DB_utility() {
+	public OP_DB_utility() {
        
     }
 
@@ -293,12 +293,10 @@ public class DB_utility {
 
 	        // Extract the desired substring
 	     String DBconnec = connect.substring(startIndex + 2, endindex);
-	     System.out.println("DBconnect: "+DBconnect);
-	     
 	     compName = compNam; 
 	     locName = locNam; 
 	     DBconnect = DBconnec;
-
+	     System.out.println("DBconnect: "+DBconnect);
 	}
 	
 }
